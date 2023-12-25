@@ -180,3 +180,10 @@ body.dark-mode {
   transition: background-color 0.3s;
 }
 
+
+body {
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+}
+
+
