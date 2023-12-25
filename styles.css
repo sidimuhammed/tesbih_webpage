@@ -1,0 +1,182 @@
+/* Reset and basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Sections styling */
+.top-section,
+.bottom-section {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 20px;
+}
+
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.left-section,
+.center-section,
+.right-section,
+.fourth-section {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box; /* Add this to include padding in the width calculation */
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .left-section,
+  .center-section,
+  .right-section,
+  .fourth-section {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Progress bar styles */
+.progress-bar {
+  height: 10px;
+  background-color: #4CAF50;
+  margin-bottom: 5px;
+}
+
+/* Filled progress bar styles */
+.progress-bar.filled::before {
+  background-color: #45a049;
+  width: 100%;
+}
+
+/* Counter styles */
+.counter {
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: changeColor 3s infinite;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.counter:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tasbih button styles */
+.tasbihButton,
+.tasbihButton.fourth,
+#darkModeToggle {
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid #3498db; /* Default border color */
+  border-radius: 5px;
+  background-color: #3498db; /* Default background color */
+  color: #fff;
+}
+
+.tasbihButton:hover,
+.tasbihButton.fourth:hover,
+#darkModeToggle:hover {
+  background-color: #007bff;
+}
+
+/* Subtle animation to tasbih buttons */
+.tasbihButton:active,
+.tasbihButton.fourth:active,
+#darkModeToggle:active {
+  transform: translate(2px);
+}
+
+/* Color-changing animation */
+@keyframes changeColor {
+  0% {
+    color: #333333;
+  }
+  50% {
+    color: #3498db;
+  }
+  100% {
+    color: #333333;
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Sections styles in dark mode */
+.dark-mode .top-section,
+.dark-mode .bottom-section,
+.dark-mode .tasbihButton,
+.dark-mode #darkModeToggle {
+  background-color: #555;
+  border-color: #555;
+  color: #fff;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Style for the Dark Mode Toggle button */
+#darkModeToggle:hover {
+  background-color: #007bb5;
+  transition: background-color 0.3s;
+}
+
+/* Update the CSS for the Allah names container */
+.namesContainer {
+  display: flex;
+  justify-content: flex-end; /* Align from right to left */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  direction: rtl; /* Set text direction to right-to-left */
+}
+
+/* Update the CSS for the names of Allah in dark mode */
+.dark-mode .allah-name {
+  padding: 10px;
+  margin: 5px;
+  background-color: #555;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: right; /* Align text from right to left */
+}
+
+/* Hover styles for Allah names in dark mode */
+.dark-mode .allah-name:hover {
+  background-color: #007bb5;
+  color: #fff;
+}
+
+/* Hover styles for Tasbih buttons in dark mode */
+.dark-mode .tasbihButton:hover,
+.dark-mode .tasbihButton.fourth:hover {
+  background-color: #007bb5;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover styles for Dark Mode Toggle button in dark mode */
+.dark-mode #darkModeToggle:hover {
+  background-color: #007bb5;
+  transition: background-color 0.3s;
+}
+

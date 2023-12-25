@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</title>
+</head>
+<body>
+    <div class="container">
+        <header class="top-section">
+    <!-- Use different class names for light and dark mode -->
+    <div class="namesContainer light-mode"></div>
+    <h1>أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</h1>
+    <!-- Add this button wherever you want on your page -->
+    <button onclick="toggleDarkMode()" id="darkModeToggle">Dark Mode</button>
+
+    <!-- New container for displaying names in dark mode -->
+    <div class="namesContainer dark-mode"></div>
+
+</header>
+
+
+        <main class="main-section">
+            <section class="left-section">
+                <div class="progress-counter-container">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar1" aria-labelledby="labelProgressBar1"></div>
+                    </div>
+                    <div class="counter" id="counter1">Counter: 0</div>
+                </div>
+                <button type="button" class="tasbihButton first" onclick="TasbihCounter.countTasbih(1)">سُبْحَانَ اللَّه</button>
+                <p>_______</p>
+                <p>عن أبي هريرة رضي الله عنه قال: قال النبي صلى الله عليه وسلم: «كلمتان حبيبتان إلى <em>الرحمن</em>، خفيفتان على اللسان، ثقيلتان في الميزان: سبحان الله وبحمده، سبحان الله العظيم<br>.
+                    أخرجه البخاري</p>
+                <p>_______</p>
+            </section>
+            <section class="center-section">
+                <div class="progress-counter-container">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar2" aria-labelledby="labelProgressBar2"></div>
+                    </div>
+                    <div class="counter" id="counter2">Counter: 0</div>
+                </div>
+                <button type="button" class="tasbihButton second" onclick="TasbihCounter.countTasbih(2)">أَسْتَغْفِرُ اللَّهَ</button>
+                <p>_______</p>
+                <p>عن أبي هريرة رضي الله عنه قال سمعت رسول الله ﷺ يقول: (والله إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة)<br>. أخرجه البخاري</p>
+                <p>_______</p>
+            </section>
+            <section class="right-section">
+                <div class="progress-counter-container">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar3" aria-labelledby="labelProgressBar3"></div>
+                    </div>
+                    <div class="counter" id="counter3">Counter: 0</div>
+                </div>
+                <button type="button" class="tasbihButton third" onclick="TasbihCounter.countTasbih(3)">اللهم صّلِ وسَلّمْ عَلۓِ نَبِيْنَا مُحَمد ﷺ</button>
+                <p>_______</p>
+                <p>عن عبد الله بن عمرو بن العاص رضي الله عنهما أن النبي صلى الله عليه وسلم قال : (مَنْ صَلَّى عَلَيَّ صَلَاةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْرًا) <br>. رواه مسلم</p>
+                <p>_______</p>
+            </section>
+
+            <section class="fourth-section">
+                <div class="progress-counter-container">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar4" aria-labelledby="labelProgressBar4"></div>
+                    </div>
+                    <div class="counter" id="counter4">Counter: 0</div>
+                </div>
+                <button type="button" class="tasbihButton fourth" onclick="TasbihCounter.countTasbih(4)">لَا إِلٰهَ إِلَّا اللهُ</button>
+                <p>_______</p>
+                <p>عن أبي هرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ أَنَّ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ : ( مَنْ قَالَ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، فِي يَوْمٍ مِائَةَ مَرَّةٍ ؛ كَانَتْ لَهُ عَدْلَ عَشْرِ رِقَابٍ ، وَكُتِبَ لَهُ مِائَةُ حَسَنَةٍ ، وَمُحِيَتْ عَنْهُ مِائَةُ سَيِّئَةٍ ، وَكَانَتْ لَهُ حِرْزًا مِنْ الشَّيْطَانِ يَوْمَهُ ذَلِكَ حَتَّى يُمْسِيَ ، وَلَمْ يَأْتِ أَحَدٌ بِأَفْضَلَ مِمَّا جَاءَ ، إِلَّا رَجُلٌ عَمِلَ أَكْثَرَمِنْه<br>. أخرجه البخاري</p>                   
+                <p>_______</p>
+            </section>
+
+
+        </main>
+
+        <footer class="bottom-section">
+            <p>&copy; 2023 أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
