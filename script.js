@@ -12,7 +12,7 @@ const namesOfAllah = [
 
 
 var TasbihCounter = {
-    counters: [0, 0, 0, 0],
+    counters: [0, 0, 0, 0, 0],
     maxCount: 100,
 
     updateCounter: function (index) {
@@ -43,8 +43,11 @@ var TasbihCounter = {
                 message = 'Congrats! You have made 100 Salawat. Do you want to reset it?';
                 break;
             case 4:
-                message = 'Congrats! You have made 100 La ilaha illallah. Do you want to reset it?';
+                message = 'Congrats! You have made 100 لَا إِلٰهَ إِلَّا اللهُ. Do you want to reset it?';
                 break;
+	    case 5: // Update the congrats message for the fifth button
+            message = 'Congrats! You have made 100 الْحَمْدُ للّهِ. Do you want to reset it?';
+            break;
             default:
                 message = 'Congratulations! You reached 100. Do you want to reset it?';
         }
@@ -72,6 +75,8 @@ var TasbihCounter = {
 
 };
 
+// TasbihCounter object definition and methods...
+
 // Attach event listeners to the buttons
 document.getElementById('tasbihButton1').addEventListener('click', function () {
     TasbihCounter.countTasbih(1);
@@ -89,6 +94,15 @@ document.getElementById('tasbihButton4').addEventListener('click', function () {
     TasbihCounter.countTasbih(4);
 });
 
+// Attach event listener to the fifth button
+document.getElementById('tasbihButton5').addEventListener('click', function () {
+    TasbihCounter.countTasbih(5);
+});
+
+// Dark mode toggle function...
+
+
+
 // Dark mode toggle function
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -96,5 +110,7 @@ function toggleDarkMode() {
         TasbihCounter.displayNamesInHeader();
     }
 }
+
+
 
 
