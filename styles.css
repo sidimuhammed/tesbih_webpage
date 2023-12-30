@@ -186,4 +186,51 @@ body {
     -ms-touch-action: manipulation;
 }
 
+/* Style for the fifth tasbih button */
+.tasbihButton.fifth {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #3498db; /* Default border color */
+    border-radius: 5px;
+    background-color: #3498db; /* Default background color */
+    color: #fff;
+}
+
+.tasbihButton.fifth:hover {
+    background-color: #007bff;
+}
+
+/* Style for the fifth tasbih button in dark mode */
+.dark-mode .tasbihButton.fifth {
+    background-color: #555;
+    border-color: #555;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Hover styles for the fifth tasbih button in dark mode */
+.dark-mode .tasbihButton.fifth:hover {
+    background-color: #007bb5;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+/* Add this style to make the Quran button similar to dark mode */
+.quran-button {
+    background-color: #3498db; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for better appearance */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.quran-button:hover {
+    background-color: #007bb5; /* Darker background color on hover */
+}
 
