@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,      maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Page title -->
     <title>أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</title>
+    <!-- Favicon -->
+    <link rel="icon" href="56319_islam_islamic_tesbih_icon.ico" type="image/x-icon">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" integrity="...">
 </head>
 <body>
+    <!-- Main container -->
     <div class="container">
+        <!-- Header section -->
         <header class="top-section">
-    <!-- Use different class names for light and dark mode -->
-    <div class="namesContainer light-mode"></div>
-    <h1>أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</h1>
-    <!-- Add this button wherever you want on your page -->
-    <button onclick="toggleDarkMode()" id="darkModeToggle">Dark Mode</button>
-<button onclick="redirectToQuran()" class="quran-button"> القرآن الكريم</button> <!-- New button for Quran page -->
+            <!-- Container for names (light mode) -->
+            <div class="namesContainer light-mode"></div>
+            <!-- Page title -->
+<p id="reminder">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</p>
 
-    <!-- New container for displaying names in dark mode -->
-    <div class="namesContainer dark-mode"></div>
-
-</header>
-
-
+            <!-- Dark mode toggle button -->
+            <button onclick="toggleDarkMode()" id="darkModeToggle" class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+            <!-- Button to redirect to Quran -->
+            <button onclick="redirectToQuran()" class="quran-button tasbihButton">القرآن الكريم</button>
+            <!-- Container for names (dark mode) -->
+            <div class="namesContainer dark-mode"></div>
+            <!-- Menu bar -->
+            <div class="menu-bar">
+                <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
+                <!-- Add other menu items here -->
+            </div>
+        </header>
+        <!-- Main section -->
         <main class="main-section">
+            <!-- Left section -->
             <section class="left-section">
+                <!-- Progress counter container -->
                 <div class="progress-counter-container">
                     <div class="progress-container">
+                        <!-- Progress bar -->
                         <div class="progress-bar" id="progressBar1" aria-labelledby="labelProgressBar1"></div>
                     </div>
+                    <!-- Counter -->
                     <div class="counter" id="counter1">Counter: 0</div>
                 </div>
+                <!-- Tasbih button and reset button -->
                 <button type="button" class="tasbihButton first" onclick="TasbihCounter.countTasbih(1)">سُبْحَانَ اللَّه</button>
+                <button type="button" class="reset-button" onclick="resetCounter(1)"><i class="fas fa-arrows-rotate"></i></button>
+                <!-- Divider and Hadith -->
                 <p>_______</p>
                 <p>عن أبي هريرة رضي الله عنه قال: قال النبي صلى الله عليه وسلم: «كلمتان حبيبتان إلى <em>الرحمن</em>، خفيفتان على اللسان، ثقيلتان في الميزان: سبحان الله وبحمده، سبحان الله العظيم<br>.
                     أخرجه البخاري</p>
+                <!-- Divider -->
                 <p>_______</p>
             </section>
+
             <section class="center-section">
                 <div class="progress-counter-container">
                     <div class="progress-container">
@@ -46,10 +67,17 @@
                     <div class="counter" id="counter2">Counter: 0</div>
                 </div>
                 <button type="button" class="tasbihButton second" onclick="TasbihCounter.countTasbih(2)">أَسْتَغْفِرُ اللَّهَ</button>
+
+<!-- Reset button for counter 2 -->
+<button type="button" class="reset-button" onclick="resetCounter(2)">
+    <i class="fas fa-arrows-rotate"></i>
+</button>
                 <p>_______</p>
                 <p>عن أبي هريرة رضي الله عنه قال سمعت رسول الله ﷺ يقول: (والله إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة)<br>. أخرجه البخاري</p>
                 <p>_______</p>
             </section>
+
+
             <section class="right-section">
                 <div class="progress-counter-container">
                     <div class="progress-container">
@@ -58,6 +86,11 @@
                     <div class="counter" id="counter3">Counter: 0</div>
                 </div>
                 <button type="button" class="tasbihButton third" onclick="TasbihCounter.countTasbih(3)">اللهم صّلِ وسَلّمْ عَلۓِ نَبِيْنَا مُحَمد ﷺ</button>
+
+<!-- Reset button for counter 3 -->
+<button type="button" class="reset-button" onclick="resetCounter(3)">
+    <i class="fas fa-arrows-rotate"></i>
+</button>
                 <p>_______</p>
                 <p>عن عبد الله بن عمرو بن العاص رضي الله عنهما أن النبي صلى الله عليه وسلم قال : (مَنْ صَلَّى عَلَيَّ صَلَاةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْرًا) <br>. رواه مسلم</p>
                 <p>_______</p>
@@ -71,9 +104,15 @@
                     <div class="counter" id="counter4">Counter: 0</div>
                 </div>
                 <button type="button" class="tasbihButton fourth" onclick="TasbihCounter.countTasbih(4)">لَا إِلٰهَ إِلَّا اللهُ</button>
+
+<!-- Reset button for counter 4 -->
+<button type="button" class="reset-button" onclick="resetCounter(4)">
+    <i class="fas fa-arrows-rotate"></i>
+</button>
                 <p>_______</p>
                 <p>عن أبي هرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ أَنَّ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ : ( مَنْ قَالَ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، فِي يَوْمٍ مِائَةَ مَرَّةٍ ؛ كَانَتْ لَهُ عَدْلَ عَشْرِ رِقَابٍ ، وَكُتِبَ لَهُ مِائَةُ حَسَنَةٍ ، وَمُحِيَتْ عَنْهُ مِائَةُ سَيِّئَةٍ ، وَكَانَتْ لَهُ حِرْزًا مِنْ الشَّيْطَانِ يَوْمَهُ ذَلِكَ حَتَّى يُمْسِيَ ، وَلَمْ يَأْتِ أَحَدٌ بِأَفْضَلَ مِمَّا جَاءَ ، إِلَّا رَجُلٌ عَمِلَ أَكْثَرَمِنْه<br>. أخرجه البخاري</p>                   
                 <p>_______</p>
+
            <section class="fifth-section">
     <div class="progress-counter-container">
         <div class="progress-container">
@@ -82,6 +121,11 @@
         <div class="counter" id="counter5">Counter: 0</div>
     </div>
     <button type="button" class="tasbihButton fifth" id="tasbihButton5" onclick="TasbihCounter.countTasbih(5)">الْحَمْدُ للّهِ </button>
+
+<!-- Reset button for counter 5 -->
+<button type="button" class="reset-button" onclick="resetCounter(5)">
+    <i class="fas fa-arrows-rotate"></i>
+</button>
     <p>_______</p>
     <p>قال تعالي</p>
     <p>﷽<br>{الْحَمْدُ للّهِ رَبِّ الْعَالَمِين}</p>
@@ -89,9 +133,6 @@
     <p>{وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ  وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ}</p>
     <p>_______</p>
 </section>
-
-
-
         </main>
 
         <footer class="bottom-section">
@@ -102,10 +143,11 @@
     <script src="script.js"></script>
 
 	<script>
-        function redirectToQuran() {
-            window.location.href = ' القرآن الكريم.html';
-        }
-    </script>
+    function redirectToQuran() {
+        window.open('https://www.pdfquran.com/', '_blank');
+    }
+</script>
+
+
 </body>
 </html>
-
