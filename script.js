@@ -1,5 +1,3 @@
-// script.js
-
 const namesOfAllah = [
     'الله', 'الرَّحْمَنُ', 'الرَّحِيمُ', 'الْمَلِكُ', 'الْقُدُّوسُ', 'السَّلَامُ', 'الْمُؤْمِنُ', 'الْمُهَيْمِنُ',
     'الْعَزِيزُ', 'الْجَبَّارُ', 'الْمُتَكَبِّرُ', 'الْخَالِقُ', 'الْبَارِئُ', 'الْمُصَّدِّقُ', 'الْمُحْيِي', 'الْمُمِيتُ',
@@ -9,52 +7,32 @@ const namesOfAllah = [
     'الْمُقْسِطُ', 'الْجَامِعُ', 'النَّاصِرُ', 'الْمَنَّانُ', 'الْحَيُّ الْقَيُّومُ', 'الْمُجِيبُ', 'الْوَاحِدُ الْأَحَدُ'
 ];
 
-
-
-var TasbihCounter = {
+const TasbihCounter = {
     counters: [0, 0, 0, 0, 0],
-    maxCount: 100,
+    maxCounts: [100, 100, 100, 100, 100], // Default maximum counts
 
-    updateCounter: function (index) {
-        if (this.counters[index - 1] < this.maxCount) {
-            this.counters[index - 1]++;
-            document.getElementById('counter' + index).textContent = 'Counter: ' + this.counters[index - 1];
-
-            var progressBar = document.getElementById('progressBar' + index);
-            var progress = (this.counters[index - 1] / this.maxCount) * 100;
-            progressBar.style.width = progress + '%';
-
-            if (this.counters[index - 1] === this.maxCount) {
-                this.showResetConfirmation(index);
+    updateMaxCounts: function() {
+        for (let i = 0; i < this.maxCounts.length; i++) {
+            const select = document.getElementById('maxCount' + (i + 1));
+            this.maxCounts[i] = parseInt(select.value);
+            if (this.counters[i] > this.maxCounts[i]) {
+                this.counters[i] = this.maxCounts[i];
+                document.getElementById('counter' + (i + 1)).textContent = 'Counter: ' + this.counters[i];
             }
+            document.getElementById('progressBar' + (i + 1)).style.width = '0%';
         }
     },
 
-    showResetConfirmation: function (index) {
-        var message = '';
-        switch (index) {
-            case 1:
-                message = 'Congrats! You have made 100 Tesbih. Do you want to reset it?';
-                break;
-            case 2:
-                message = 'Congrats! You have made 100 Istighfar. Do you want to reset it?';
-                break;
-            case 3:
-                message = 'Congrats! You have made 100 Salawat. Do you want to reset it?';
-                break;
-            case 4:
-                message = 'Congrats! You have made 100 لَا إِلٰهَ إِلَّا اللهُ. Do you want to reset it?';
-                break;
-	    case 5: // Update the congrats message for the fifth button
-            message = 'Congrats! You have made 100 الْحَمْدُ للّهِ. Do you want to reset it?';
-            break;
-            default:
-                message = 'Congratulations! You reached 100. Do you want to reset it?';
-        }
-
-        var resetConfirmed = confirm(message);
-        if (resetConfirmed) {
-            this.resetCounter(index);
+    updateCounter: function(index) {
+        if (this.counters[index - 1] < this.maxCounts[index - 1]) {
+            this.counters[index - 1]++;
+            document.getElementById('counter' + index).textContent = 'Counter: ' + this.counters[index - 1];
+            const progress = (this.counters[index - 1] / this.maxCounts[index - 1]) * 100;
+            document.getElementById('progressBar' + index).style.width = progress + '%';
+        } else {
+            this.counters[index - 1] = 0;
+            document.getElementById('counter' + index).textContent = 'Counter: ' + this.counters[index - 1];
+            document.getElementById('progressBar' + index).style.width = '0%';
         }
     },
 
@@ -68,47 +46,35 @@ var TasbihCounter = {
         this.updateCounter(index);
     },
 
-   displayNamesInHeader: function () {
-    const namesContainer = document.querySelector('.namesContainer.dark-mode');
-    namesContainer.innerHTML = namesOfAllah.map(name => `<div class="allah-name">${name}</div>`).join('');
-}
-
+    displayNamesInHeader: function () {
+        const namesContainer = document.querySelector('.namesContainer.dark-mode');
+        namesContainer.innerHTML = namesOfAllah.map(name => `<div class="allah-name">${name}</div>`).join('');
+    }
 };
 
-// TasbihCounter object definition and methods...
-
-// Attach event listeners to the buttons
-document.getElementById('tasbihButton1').addEventListener('click', function () {
-    TasbihCounter.countTasbih(1);
+document.querySelectorAll('.dropdown-menu').forEach(function(select) {
+    select.addEventListener('change', TasbihCounter.updateMaxCounts.bind(TasbihCounter));
 });
 
-document.getElementById('tasbihButton2').addEventListener('click', function () {
-    TasbihCounter.countTasbih(2);
-});
-
-document.getElementById('tasbihButton3').addEventListener('click', function () {
-    TasbihCounter.countTasbih(3);
-});
-
-document.getElementById('tasbihButton4').addEventListener('click', function () {
-    TasbihCounter.countTasbih(4);
-});
-
-// Attach event listener to the fifth button
-document.getElementById('tasbihButton5').addEventListener('click', function () {
-    TasbihCounter.countTasbih(5);
-});
-
-// Dark mode toggle function...
-
-
-
-// Dark mode toggle function
-function toggleDarkMode() {
+document.getElementById('darkModeToggle').addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
         TasbihCounter.displayNamesInHeader();
     }
+});
+
+for (let i = 1; i <= 5; i++) {
+    document.getElementById('tasbihButton' + i).addEventListener('click', function () {
+        TasbihCounter.countTasbih(i);
+    });
+}
+
+function resetCounter(counterIndex) {
+    TasbihCounter.resetCounter(counterIndex);
+}
+
+function redirectToQuran() {
+    window.open('https://www.pdfquran.com/', '_blank');
 }
 
 
