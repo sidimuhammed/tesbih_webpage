@@ -1,4 +1,4 @@
-/* Reset and basic styles */
+
 body {
   margin: 0;
   padding: 0;
@@ -232,5 +232,88 @@ body {
 
 .quran-button:hover {
     background-color: #007bb5; /* Darker background color on hover */
+}
+
+.menu-bar {
+    position: absolute;
+    top: 20px; /* Adjust the top distance as needed */
+    left: 20px; /* Adjust the left distance as needed */
+    z-index: 999; /* Ensure it's above other content */
+}
+
+.menu-icon {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    background-color: #555;
+}
+
+
+/* Reset button styles */
+.reset-button {
+    background-color: #ffffff; /* White background */
+    border: 2px solid #333; /* Dark border */
+    border-radius: 50%; /* Rounded shape */
+    color: #333; /* Dark text color */
+    cursor: pointer; /* Show pointer on hover */
+    display: block; /* Block display */
+    font-size: 14px; /* Font size */
+    height: 30px; /* Button height */
+    margin: 5px auto; /* Center the buttons and add some space */
+    outline: none; /* Remove outline on focus */
+    padding: 0; /* Remove default padding */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    width: 30px; /* Button width */
+}
+
+.reset-button:hover {
+    background-color: #333; /* Dark background on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Icon inside reset button */
+.reset-button i {
+    display: inline-block; /* Ensure icon is displayed as block element */
+    line-height: 30px; /* Center icon vertically */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    font-size: 12px; /* Adjust icon size */
+}
+
+#reminder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: changeColor 8s infinite;
+    border: 1px solid #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    color: #004d99; /* Darker blue font color */
+    background-color: #d9edf7; /* Light blue background */
+}
+
+#reminder:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Color-changing animation */
+@keyframes changeColor {
+    0% {
+        color: #333333; /* Initial color */
+    }
+    50% {
+        color: #004d99; /* Color during animation */
+    }
+    100% {
+        color: #333333; /* Final color */
+    }
 }
 
