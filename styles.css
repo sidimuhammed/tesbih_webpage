@@ -1,319 +1,267 @@
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  color: #343a40;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+/* CSS Custom Properties for Islamic theme */
+:root {
+  --primary-green: #1a6e5d;
+  --secondary-green: #3c8878;
+  --gold: #c4a962;
+  --cream: #f8f4e9;
+  --dark: #2c3e50;
+  --text-dark: #34495e;
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
 }
 
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Traditional Arabic', 'Amiri', serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Container layout */
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* Sections styling */
-.top-section,
-.bottom-section {
-  background-color: #0056b3;
-  color: #fff;
-  padding: 20px;
-}
-
-.main-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.left-section,
-.center-section,
-.right-section,
-.fourth-section {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box; /* Add this to include padding in the width calculation */
-}
-
-/* Media query for responsiveness */
-@media screen and (max-width: 768px) {
-  .left-section,
-  .center-section,
-  .right-section,
-  .fourth-section {
-    flex: 0 0 100%;
-    margin-bottom: 20px;
-  }
-}
-
-/* Progress bar styles */
-.progress-bar {
-  height: 10px;
-  background-color: #4CAF50;
-  margin-bottom: 5px;
-}
-
-/* Filled progress bar styles */
-.progress-bar.filled::before {
-  background-color: #45a049;
-  width: 100%;
-}
-
-/* Counter styles */
-.counter {
-  font-size: 36px;
-  margin-bottom: 20px;
-  animation: changeColor 3s infinite;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
-}
-
-.counter:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Tasbih button styles */
-.tasbihButton,
-.tasbihButton.fourth,
-#darkModeToggle {
-  font-size: 18px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  border: 1px solid #3498db; /* Default border color */
-  border-radius: 5px;
-  background-color: #3498db; /* Default background color */
-  color: #fff;
-}
-
-.tasbihButton:hover,
-.tasbihButton.fourth:hover,
-#darkModeToggle:hover {
-  background-color: #007bff;
-}
-
-/* Subtle animation to tasbih buttons */
-.tasbihButton:active,
-.tasbihButton.fourth:active,
-#darkModeToggle:active {
-  transform: translate(2px);
-}
-
-/* Color-changing animation */
-@keyframes changeColor {
-  0% {
-    color: #333333;
-  }
-  50% {
-    color: #3498db;
-  }
-  100% {
-    color: #333333;
-  }
-}
-
-/* Dark mode styles */
-body.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
-
-/* Sections styles in dark mode */
-.dark-mode .top-section,
-.dark-mode .bottom-section,
-.dark-mode .tasbihButton,
-.dark-mode #darkModeToggle {
-  background-color: #555;
-  border-color: #555;
-  color: #fff;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-
-/* Style for the Dark Mode Toggle button */
-#darkModeToggle:hover {
-  background-color: #007bb5;
-  transition: background-color 0.3s;
-}
-
-/* Update the CSS for the Allah names container */
-.namesContainer {
-  display: flex;
-  justify-content: flex-end; /* Align from right to left */
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  direction: rtl; /* Set text direction to right-to-left */
-}
-
-/* Update the CSS for the names of Allah in dark mode */
-.dark-mode .allah-name {
-  padding: 10px;
-  margin: 5px;
-  background-color: #555;
-  color: #fff;
-  transition: background-color 0.3s, color 0.3s;
-  text-align: right; /* Align text from right to left */
-}
-
-/* Hover styles for Allah names in dark mode */
-.dark-mode .allah-name:hover {
-  background-color: #007bb5;
-  color: #fff;
-}
-
-/* Hover styles for Tasbih buttons in dark mode */
-.dark-mode .tasbihButton:hover,
-.dark-mode .tasbihButton.fourth:hover {
-  background-color: #007bb5;
-  color: #fff;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Hover styles for Dark Mode Toggle button in dark mode */
-.dark-mode #darkModeToggle:hover {
-  background-color: #007bb5;
-  transition: background-color 0.3s;
-}
-
-
-body {
-    touch-action: manipulation;
-    -ms-touch-action: manipulation;
-}
-
-/* Style for the fifth tasbih button */
-.tasbihButton.fifth {
-    font-size: 18px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    border: 1px solid #3498db; /* Default border color */
-    border-radius: 5px;
-    background-color: #3498db; /* Default background color */
-    color: #fff;
-}
-
-.tasbihButton.fifth:hover {
-    background-color: #007bff;
-}
-
-/* Style for the fifth tasbih button in dark mode */
-.dark-mode .tasbihButton.fifth {
-    background-color: #555;
-    border-color: #555;
-    color: #fff;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-
-/* Hover styles for the fifth tasbih button in dark mode */
-.dark-mode .tasbihButton.fifth:hover {
-    background-color: #007bb5;
-    color: #fff;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-
-
-/* Add this style to make the Quran button similar to dark mode */
-.quran-button {
-    background-color: #3498db; /* Background color */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding for better appearance */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-.quran-button:hover {
-    background-color: #007bb5; /* Darker background color on hover */
-}
-
-.menu-bar {
-    position: absolute;
-    top: 20px; /* Adjust the top distance as needed */
-    left: 20px; /* Adjust the left distance as needed */
-    z-index: 999; /* Ensure it's above other content */
-}
-
-.menu-icon {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.menu-icon:hover {
-    background-color: #555;
-}
-
-
-/* Reset button styles */
-.reset-button {
-    background-color: #ffffff; /* White background */
-    border: 2px solid #333; /* Dark border */
-    border-radius: 50%; /* Rounded shape */
-    color: #333; /* Dark text color */
-    cursor: pointer; /* Show pointer on hover */
-    display: block; /* Block display */
-    font-size: 14px; /* Font size */
-    height: 30px; /* Button height */
-    margin: 5px auto; /* Center the buttons and add some space */
-    outline: none; /* Remove outline on focus */
-    padding: 0; /* Remove default padding */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-    width: 30px; /* Button width */
-}
-
-.reset-button:hover {
-    background-color: #333; /* Dark background on hover */
-    color: #ffffff; /* White text color on hover */
-}
-
-/* Icon inside reset button */
-.reset-button i {
-    display: inline-block; /* Ensure icon is displayed as block element */
-    line-height: 30px; /* Center icon vertically */
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-    font-size: 12px; /* Adjust icon size */
+/* Header styling */
+.top-section {
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  color: var(--cream);
+  padding: 2rem;
+  position: relative;
+  box-shadow: var(--shadow-medium);
 }
 
 #reminder {
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    margin-bottom: 20px;
-    animation: changeColor 8s infinite;
-    border: 1px solid #007bff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
-    color: #004d99; /* Darker blue font color */
-    background-color: #d9edf7; /* Light blue background */
+  font-size: 2rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#reminder:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+/* Main content layout */
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--cream);
 }
 
-/* Color-changing animation */
-@keyframes changeColor {
-    0% {
-        color: #333333; /* Initial color */
-    }
-    50% {
-        color: #004d99; /* Color during animation */
-    }
-    100% {
-        color: #333333; /* Final color */
-    }
+/* Section styling */
+.left-section,
+.center-section,
+.right-section,
+.fourth-section,
+.fifth-section {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
 }
 
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Counter styling */
+.counter {
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(26, 110, 93, 0.1);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--gold), var(--primary-green));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Tasbih buttons */
+.tasbihButton {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 1rem 0;
+}
+
+.tasbihButton:hover {
+  background: var(--secondary-green);
+  transform: translateY(-2px);
+}
+
+.tasbihButton:active {
+  transform: translateY(1px);
+}
+
+/* Reset button */
+.reset-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.reset-button:hover {
+  background: var(--primary-green);
+  color: white;
+}
+
+/* Hadith text styling */
+p {
+  text-align: justify;
+  margin: 1rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Dark mode toggle */
+#darkModeToggle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--cream);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Quran button */
+.quran-button {
+  padding: 0.8rem 1.5rem;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+.quran-button:hover {
+  background: #d4b972;
+  transform: translateY(-2px);
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --cream: #1a1a1a;
+  --text-dark: #ffffff;
+  --primary-green: #2d8f7b;
+  --secondary-green: #4da899;
+}
+
+.dark-mode section {
+  background: #2c2c2c;
+  color: white;
+}
+
+/* Footer */
+.bottom-section {
+  background: var(--dark);
+  color: var(--cream);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Names container */
+.namesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+
+  .tasbihButton {
+    padding: 1.2rem;
+  }
+
+  #reminder {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.tasbihButton:focus {
+  animation: buttonPulse 0.5s ease;
+}
+
+/* Accessibility improvements */
+.tasbihButton:focus,
+.reset-button:focus,
+#darkModeToggle:focus {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .tasbihButton {
+    padding: 1.5rem;
+  }
+
+  .reset-button {
+    width: 48px;
+    height: 48px;
+  }
+}
