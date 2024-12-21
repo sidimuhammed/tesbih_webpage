@@ -21,7 +21,8 @@
 
 html {
   direction: rtl;
-  font-size: 16px;
+  font-size: 16px; /* Minimum font size to prevent zooming */
+  touch-action: manipulation; /* Prevent zooming on double-tap */
 }
 
 body {
@@ -106,7 +107,7 @@ section:hover {
 .tasbihButton {
   width: 100%;
   padding: 1rem 2rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Ensures readability and prevents zooming */
   background: var(--primary-green);
   color: white;
   border: none;
@@ -114,6 +115,7 @@ section:hover {
   cursor: pointer;
   transition: var(--transition);
   margin: 1rem 0;
+  touch-action: manipulation; /* Prevent zooming */
 }
 
 .tasbihButton:hover {
@@ -139,6 +141,7 @@ section:hover {
   align-items: center;
   justify-content: center;
   margin: 1rem auto;
+  touch-action: manipulation; /* Prevent zooming */
 }
 
 .reset-button:hover {
@@ -265,3 +268,4 @@ p {
     height: 48px;
   }
 }
+
